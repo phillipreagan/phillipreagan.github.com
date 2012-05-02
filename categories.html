@@ -11,6 +11,13 @@ group: navigation
   {% include JB/categories_list %}
 </ul>
 
+{% for post in site.posts %}
+  <h3>Categories for: {{post.title}}</h3>  
+  <ul>
+    {% assign categories_list = post.categories %}  
+    {% include JB/categories_list %}
+  </ul>
+{% endfor %}
 
 {% for category in site.categories %} 
   <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>

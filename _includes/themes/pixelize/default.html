@@ -29,19 +29,47 @@
 	<div class="container_12">
 		<div class="grid_12">
 			<h1 id="branding">
-				<a class="brand" href="{{ HOME_PATH }}">{{ site.title }} {Games, Code and Design}</a>
+				<a class="brand" href="{{ HOME_PATH }}">Thoughts on <strong>games</strong>, <strong>code</strong> and <strong>design</strong>. The online home of <strong>{{ site.title }}</strong></a>
 			</h1>
 		</div>
         <div class="clear"></div>
-		<div class="grid_12">
-			<h2 id="page-heading">Games, Code and Design</h2>
+        
+        <div class="grid_9">
+           	{{ content }}
 		</div>
-		<div class="clear"></div>
-		<div class="grid_3">
+        
+        <div class="grid_3">
 			<div class="box">
-				<h2>Design Process</h2>
+				<h2><a href="#" id="toggle-nav">Navigation</a></h2>
+				<div class="block" id="nav">
+                    {% assign pages_list = site.pages %}
+                    {% assign group = 'navigation' %}
+                    {% include JB/pages_list %}
+				</div>
+			</div>
+		</div>
+        
+        <div class="grid_3">
+			<div class="box">
+				<h2><a href="#" id="toggle-social">Social</a></h2>
+				<div class="block" id="social">
+                    <a href="{{ BASE_PATH }}/atom.xml"><img src="{{ ASSET_PATH }}/images/icons/rss_64.png" /></a>
+                    <a href="http://www.linkedin.com/in/phillipreagan"><img src="{{ ASSET_PATH }}/images/icons/linkedin_64.png" /></a>
+					<a href="https://github.com/phillipreagan"><img src="{{ ASSET_PATH }}/images/icons/github_64.png" /></a>
+                    <a href="https://twitter.com/PhilDanger"><img src="{{ ASSET_PATH }}/images/icons/twitter_64.png" /></a>
+                    <a href="https://plus.google.com/106547477830991344248"><img src="{{ ASSET_PATH }}/images/icons/google-plus_64.png" /></a>
+                    <a href="http://phildanger.blogspot.com/"><img src="{{ ASSET_PATH }}/images/icons/blogger_64.png" /></a>
+				</div>
+			</div>
+		</div>
+        
+        <div class="clear"></div>      
+                
+        <div class="grid_3">
+			<div class="box">
+				<h2>Disclaimer</h2>
 				<div class="block">
-					<p>Design is based on the inspiration of past accomplishments. On that foundation, we can build upon those achievements to shape the future. Design is about life — past, present and future — and the learning process that happens between birth and death. It is about community and shared knowledge and experience. It is the passion to build on what we've learned to create something better.</p>
+					<p>The words and opinions expressed here are my own, and do not, in any way, represent the views of my employer.</p>
 				</div>
 			</div>
 		</div>
@@ -75,32 +103,7 @@
 				</div>
 			</div>
 		</div>
-    	<div class="clear"></div>
-        <div class="grid_3">
-			<div class="box">
-				<h2><a href="#" id="toggle-social">Social</a></h2>
-				<div class="block" id="social">
-					<img src="{{ ASSET_PATH }}/images/icons/google-plus_32.png" />
-                    <img src="{{ ASSET_PATH }}/images/icons/linkedin_32.png" />
-                    <img src="{{ ASSET_PATH }}/images/icons/rss_32.png" />
-                    <img src="{{ ASSET_PATH }}/images/icons/twitter_32.png" />
-				</div>
-			</div>
-		</div>
-        <div class="clear"></div>
-        <div class="grid_9">
-           	{{ content }}
-		</div>
-        <div class="grid_3">
-			<div class="box">
-				<h2><a href="#" id="toggle-social">Navigation</a></h2>
-				<div class="block" id="social">
-					{% assign pages_list = site.pages %}
-                	{% assign group = 'navigation' %}
-                	{% include JB/pages_list %}
-				</div>
-			</div>
-		</div>
+        
         <div class="clear"></div>      
         <footer>
             <p>&copy; {{ site.author.name }} 2012</p>

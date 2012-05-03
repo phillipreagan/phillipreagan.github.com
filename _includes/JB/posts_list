@@ -1,0 +1,28 @@
+{% comment %}<!--
+Lists out the most recent 8 posts.
+Usage:
+  1) include JB/posts_lists
+  example:
+    {% include JB/posts_list %}
+
+  Ordering:
+    Posts are displayed in reverse chronological order.
+    For normal chronological order:
+      1) Change the for loop to this:
+        => 'for post in site.posts limit:8 reversed'        
+-->{% endcomment %}
+
+{% for post in site.posts limit:8  %}
+    <div class="box">
+        <h2><a href="#" id="toggle-{{ post.title }}">&nbsp;</a></h2>
+        <div class="block" id="{{ post.title }}">
+            <div class="article">
+                <h2 class="title"><a href="{{ BASE_PATH }}{{post.url}}">{{ post.title }}</a></h2>
+                <h4>{{ post.tagline }}</h4>
+                <p class="meta">{{ post.date | date:"%b %d %Y" }}</p>
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+{% endfor %}

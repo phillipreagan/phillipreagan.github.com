@@ -6,5 +6,37 @@ group: navigation
 ---
 {% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+{% for post in site.posts %} 
+    	{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+        {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+        {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+      
+        {% if forloop.first %}
+        <div class="grid_4">
+            <div class="box">
+                <h2><a href="#" id="toggle-box">{{ this_month }} {{ this_year }}</a></h2>
+                <div class="block" id="box">
+                    <ul>
+        {% endif %}
+        				<li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+        
+        {% if forloop.last %}
+        			</ul>
+            	</div>
+        	</div>
+         </div>
+        {% else %}
+        	{% if this_month != next_month %}
+                    </ul>
+            	</div>
+        	</div>
+         </div>
+         <div class="grid_4">
+            <div class="box">
+                <h2><a href="#" id="toggle-box">{{ next_month }} {{ next_year }}</a></h2>
+                <div class="block" id="box">
+                    <ul>
+         	{% endif %}
+        {% endif %}
+{% endfor %}

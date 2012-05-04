@@ -4,15 +4,15 @@ title: Categories
 header: Posts By Category
 group: navigation
 ---
-{% include JB/setup %}
+{% include setup %}
 {% for category in site.categories %} 
 	<div class="grid_4">
         <div class="box">
-            <h2><a href="#" id="toggle-{{ category[0] }}">{{ category[0] }}</a></h2>
-            <div class="block" id="{{ category[0] }}">
+            <span class="static_bar">{{ category[0] }} <strong>[{{ category[1].size }}]</strong></span>
+            <div class="block">
                 <ul>
-                    {% assign pages_list = category[1] %}  
-                    {% include JB/pages_list %}
+                    {% assign generic_list = category[1] %}  
+                    {% include generic_list %}
                 </ul>
             </div>
         </div>

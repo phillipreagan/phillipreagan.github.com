@@ -4,15 +4,15 @@ title: Tags
 header: Posts By Tag
 group: navigation
 ---
-{% include JB/setup %}
+{% include setup %}
 {% for tag in site.tags %} 
 	<div class="grid_4">
 		<div class="box">
-            <h2><a href="#" id="toggle-{{ tag[0] }}">{{ tag[0] }}</a></h2>
-            <div class="block" id="{{ tag[0] }}">
+            <span class="static_bar">{{ tag[0] }} <strong>[{{ tag[1].size }}]</strong></span>
+            <div class="block">
                 <ul>
-                    {% assign pages_list = tag[1] %}  
-                    {% include JB/pages_list %}
+                    {% assign generic_list = tag[1] %}  
+                    {% include generic_list %}
                 </ul>
             </div>
         </div>

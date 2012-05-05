@@ -9,17 +9,14 @@ Usage:
   	  {% include navs_list %}
   	</ul>
 -->{% endcomment %}
-
 {% for node in navs_list %}
-	{% if node.title != null %}
-      	{% if group == null or group == node.group %}
-      		{% if page.url == node.url %}
-        		<span class="nav"><a href="{{ BASE_PATH }}{{node.url}}" class="current">{{node.title}}</a></span>
-      		{% else %}
-      			<span class="nav"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></span>
-      		{% endif %}
-      	{% endif %}
+	{% if group == null or group == node.group %}
+    	{% if page.url == node.url %}
+       			<span class="nav"><a href="{{ BASE_PATH }}{{node.url}}" class="current">{{node.header}}</a></span>
+    	{% else %}
+    			<span class="nav"><a href="{{ BASE_PATH }}{{node.url}}">{{node.header}}</a></span>
     	{% endif %}
+    {% endif %}
 {% endfor %}
 {% assign pages_list = nil %}
 {% assign group = nil %}

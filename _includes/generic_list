@@ -18,7 +18,6 @@ Usage:
   	i.e. site.tags.cool_tag (this returns an array of posts tagged: cool_tag)
     
 -->{% endcomment %}
-
 {% for node in generic_list %}
 	{% if node.title != null %}
       	{% if group == null or group == node.group %}

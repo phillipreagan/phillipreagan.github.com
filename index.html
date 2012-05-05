@@ -1,21 +1,21 @@
 ---
 layout: page
-title: Home 
-header: Online home of Phillip Reagan
+title: Phillip Reagan
+description: My name is Phillip Reagan and I love to build and create new things for people to play with. I specialize in game/application development and design for online and mobile devices.
+header: Home
 group: navigation
 ---
 {% include setup %}
 {% for post in site.posts limit:8  %}
-    <div class="box">
-        <span class="info_bar"><a href="#" id="toggle-{{ post.title }}">{{ post.title }}</a></span>
-        <div class="block" id="{{ post.title }}">
-            <div class="article">
-            	<div class="post-date">{{ post.date | date : "%b %d %Y" }}</div>
-                <h2 class="title"><a href="{{ BASE_PATH }}{{post.url}}">{{ post.title }}</a></h2>
-                <p class="meta">{{ post.tagline }}</p>
-                <p>{{ post.content }}</p>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
+                <div class="box">
+                    <span class="info_bar"><a href="#" id="toggle-{{ post.title }}">{{ post.title }}</a></span>
+                    <div class="block" id="{{ post.title }}">
+                        <div class="post">
+                            <div class="post-date">{{ post.date | date : "%b %d %Y" }}</div>
+                            <h2 class="title"><a href="{{ BASE_PATH }}{{post.url}}">{{ post.title }}</a></h2>
+                            <p class="meta">{{ post.tagline }}</p>
+                            <p>{{ post.content }}</p>
+                        </div>
+                    </div>
+                </div>
 {% endfor %}

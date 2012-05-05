@@ -1,21 +1,22 @@
 ---
 layout: page
 title: Categories
-header: Posts By Category
+description: List of all posts by category.
+header: Categories
 group: navigation
 ---
 {% include setup %}
 {% for category in site.categories %} 
-	<div class="grid_4">
-        <div class="box">
-            <span class="static_bar">{{ category[0] }} <strong>[{{ category[1].size }}]</strong></span>
-            <div class="block">
-                <ul>
-                    {% assign generic_list = category[1] %}  
-                    {% include generic_list %}
-                </ul>
-            </div>
-        </div>
-    </div>  
+                <div class="grid_4">
+                    <div class="box">
+                        <span class="static_bar">{{ category[0] }} <strong>[{{ category[1].size }}]</strong></span>
+                        <div class="block">
+                            <ul>
+                                {% assign generic_list = category[1] %}  
+                                {% include generic_list %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>  
 {% endfor %}
 
